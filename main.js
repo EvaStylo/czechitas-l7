@@ -1,84 +1,48 @@
-// Hodnoty null a undefined
+// Obor platnosti proměnných
 
-const hesloUzivatel = prompt('Zadej heslo')
-let message
+const age = Number(prompt('Zadej svůj věk:')) // Globální obor platnosti 
 
-if (hesloUzivatel === 'ahoj'){
-    message = 'Správné heslo!'
-}else{
-    message = 'Špatně zadané heslo!'
+/*
+if (age < 18) {
+	const remains = 18 - age
+
+	if (remains >= 2) {
+		document.body.innerHTML = '<p>Už to máš za pár</p>'
+	} else if (remains >= 5) {
+		document.body.innerHTML = `<p>${age}</p>` // V pořádku
+		document.body.innerHTML += `<p>Ještě si počkáš ${remains} let</p>`
+	} else {
+		document.body.innerHTML = '<p>Utíkej za mamkou</p>'
+	}
+} else {
+	document.body.innerHTML = `<p>${age}</p>` // V pořádku
+	document.body.innerHTML += '<p>Vítej mezi dospěláky</p>'
 }
 
+document.body.innerHTML = `<p>${age}</p>` // V pořádku
+*/
 
-let zprava = document.querySelector('.msg')
+const superMessage = 'moje super zpráva'
 
-
-if (zprava === null) { // stéjně můžeme ověřovat undefined
-    alert ('Element neexistuje nelze předat zprávu')
-}else{
-    zprava.textContent = message
+if (age < 18) {
+	const message = 'Utíkej za mamkou' // lokální obor platnosti
+	document.body.innerHTML = `<p>${message}</p>`
+    
+    console.log(message)
+} else {
+	const message = 'Vítej mezi dospěláky' // lokální obor platnosti
+	document.body.innerHTML = `<p>${message}</p>`
+    console.log(message)
 }
 
+const message = 'Vítej ve světě slasti'
 
-// Speciální druhy funkcí
- 
-const funkceJedna = () => {
-    return 1
+const checkAge = (age, message) => {
+    if(age < 18) {
+        return message
+    }else{
+        const message = 'Vítej mezi dospěláky'
+        return message
+    }
 }
-
-const funkceDva = () => {
-    return 2
-}
-
-const funkceTri = () => {
-    return 3
-}
-
-const vypisFunkciJedna = () => {
-    console.log(funkceJedna())
-    console.log(funkceDva())
-    console.log(funkceTri())
-} // undefined
-
-vypisFunkciJedna()
-
-const showOrderSummary = (summary) => {
-	const summaryElm = document.querySelector('#summary')
-
-    /*
-    summaryElm.innerHTML = `
-    <div class="summary__count">Celkem položek: ${summary.count}</div>
-    <div class="summary__sum">Částka: ${summary.sum}</div>`
-    */
-
-    /*
-   if (summaryElm === null) {
-    return false
-   }else{
-    summaryElm.innerHTML = `
-    <div class="summary__count">Celkem položek: ${summary.count}</div>
-    <div class="summary__sum">Částka: ${summary.sum}</div>
-   `
-    return true
-   }
-   */ 
-
-}// undefined
-
-let soupisInformaci = {count: 10, sum: 10000}
-
-let vypisSummary = showOrderSummary(soupisInformaci) //undefined
-
-// Funkce bez parametru
-
-const setHeaderColorToRed = () => {
-    let headtext = document.querySelector('h1')
-    headtext.style.color = 'red'
-}
-
-const setBackgroundColor = (colorName) => {
-    let headtext = document.querySelector('body')
-    headtext.style.backgroundColor = colorName
-}
-
 
