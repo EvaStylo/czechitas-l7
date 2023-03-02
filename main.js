@@ -68,3 +68,17 @@ const showOrderSummary = (summary) => {
 let soupisInformaci = {count: 10, sum: 10000}
 
 let vypisSummary = showOrderSummary(soupisInformaci) //undefined
+
+// Funkce bez parametru
+
+const setHeaderColorToRed = () => {
+    let headtext = document.querySelector('h1')
+    headtext.style.color = 'red'
+}
+
+const setBackgroundColor = (colorName) => {
+    let headtext = document.querySelector('body')
+    headtext.style.backgroundColor = colorName
+}
+
+
