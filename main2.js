@@ -1,7 +1,7 @@
 // Obor platnosti proměnných
 
 
-
+/*
 
 const wage = Number(prompt('Zadej svoji hodinovou mzdu:')) 
 const hours = Number(prompt('Zadej kolik hodin denně pracuješ:')) 
@@ -25,9 +25,9 @@ document.body.innerHTML += `
 	<p>Odpracováno hodin za den: ${hours}</p>
 	<p>Odpracovaných dnů v měsíci: ${days}</p>
 	<p>Hrubá mzda: ${beforeTaxation} Kč</p>
-	<p>Čistá mzda: ${afterTaxation} Kč</p>  `
+	<p>Čistá mzda: ${afterTaxation} Kč</p>  `  */
 
-	/*const number1 = Number(prompt('Zadej první číslo:')) 
+	const number1 = Number(prompt('Zadej první číslo:')) 
 	const number2 = Number(prompt('Zadej druhé číslo:')) 
 	const operator = prompt('Zadej matematický operátor (+, -, *, /):')
 
@@ -52,4 +52,4 @@ document.body.innerHTML += `
 	<h3>Kalkulačka:</H3>
 	<p>${number1} ${operator} ${number2} = ${vysledek}</p>
 	 `
- */
+
